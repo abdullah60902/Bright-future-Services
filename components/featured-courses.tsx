@@ -62,10 +62,7 @@ export default function FeaturedCourses({ courses }: FeaturedCoursesProps) {
                     <Calendar className="w-4 h-4 mr-2" />
                     {course.duration}
                   </div>
-                  <div className="flex items-center">
-                    <Users className="w-4 h-4 mr-2" />
-                    {course.students.toLocaleString()} students
-                  </div>
+                 
                   {course.liveOnZoom && (
                     <div className="flex items-center text-blue-600 font-medium">
                       <Video className="w-4 h-4 mr-2" />

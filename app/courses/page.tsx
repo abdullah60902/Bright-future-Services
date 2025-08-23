@@ -122,12 +122,9 @@ export default function CoursesPage() {
                       <div className="space-y-2 mb-4">
                         <div className="flex items-center text-sm text-slate-600">
                           <Calendar className="w-4 h-4 mr-2" />
-                          {course.duration} • Next: {new Date(course.nextCohort).toLocaleDateString()}
+                          {course.duration} 
                         </div>
-                        <div className="flex items-center text-sm text-slate-600">
-                          <Users className="w-4 h-4 mr-2" />
-                          {course.students.toLocaleString()} students
-                        </div>
+                        
                         {course.liveOnZoom && (
                           <div className="flex items-center text-sm text-blue-600 font-medium">
                             <Video className="w-4 h-4 mr-2" />

@@ -9,39 +9,63 @@ export async function POST(request: Request) {
 
     // 🚀 Direct SMTP config (Gmail)
     const transporter = nodemailer.createTransport({
-  service: 'Gmail',
-  auth: {
-    user: 'ns.global.ser@gmail.com',
-    pass: 'tvndoeocunbpadyl', // ✅ No spaces here
-  },
-});
+      service: "Gmail",
+      auth: {
+         user: "info.bright.future.ser@gmail.com",
+        pass: "hjoqqbokbylfsgom", // ⚠️ .env me rakho
+      },
+    });
 
     await transporter.sendMail({
-      from: `"${name}" <ns.global.sr@gmail.com>`, // User ka name + aapka Gmail
-      to: "ns.global.sr@gmail.com", // Jahan form ka data receive karna hai
-      subject: `📩 New Contact Form: ${interest}`,
-      html: `
-        <div style="font-family: Arial, sans-serif; background:#f9f9f9; padding:20px;">
-          <div style="max-width:600px; margin:auto; background:#fff; border-radius:8px; overflow:hidden;">
-            <div style="background:#155DFC; color:#fff; padding:15px; text-align:center;">
-              <h2 style="margin:0;">New Contact Form Submission</h2>
-            </div>
-            <div style="padding:20px; color:#333;">
-              <p><b style="color:#155DFC;">Name:</b> ${name}</p>
-              <p><b style="color:#155DFC;">Email:</b> ${email}</p>
-              <p><b style="color:#155DFC;">Interest:</b> ${interest}</p>
-              <p><b style="color:#155DFC;">Message:</b></p>
-              <div style="background:#f1f1f1; padding:10px; border-radius:6px;">
-                ${message}
-              </div>
-            </div>
-            <div style="background:#f4f4f4; padding:12px; text-align:center; font-size:12px; color:#666;">
-              © ${new Date().getFullYear()} NS Global Services
-            </div>
-          </div>
+  from: `"${name}" <info.bright.future.ser@gmail.com>`, // ✅ sahi wala email
+  to: "info.bright.future.ser@gmail.com", // ✅ apna hi Gmail rakho
+  subject: `📩 New Contact Form: ${interest}`,
+  html: `
+    <div style="font-family: 'Segoe UI', Arial, sans-serif; background:#f3f6fa; padding:30px;">
+      <div style="max-width:650px; margin:auto; background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); overflow:hidden;">
+        
+        <!-- Header -->
+        <div style="background:linear-gradient(135deg, #155DFC, #003bbd); color:#fff; padding:25px; text-align:center;">
+          <h1 style="margin:0; font-size:22px;">📨 New Contact Form Submission</h1>
         </div>
-      `,
-    });
+
+        <!-- Body -->
+        <div style="padding:25px; color:#333; line-height:1.6;">
+          <p style="font-size:16px; margin-bottom:15px;">Hello Team,</p>
+          <p style="margin-bottom:25px;">You have received a new inquiry from the website. Details are below:</p>
+
+          <table style="width:100%; border-collapse:collapse; font-size:15px;">
+            <tr>
+              <td style="padding:10px; font-weight:bold; color:#155DFC; width:120px;">Name:</td>
+              <td style="padding:10px; background:#f9f9f9; border-radius:6px;">${name}</td>
+            </tr>
+            <tr>
+              <td style="padding:10px; font-weight:bold; color:#155DFC;">Email:</td>
+              <td style="padding:10px; background:#f9f9f9; border-radius:6px;">${email}</td>
+            </tr>
+            <tr>
+              <td style="padding:10px; font-weight:bold; color:#155DFC;">Interest:</td>
+              <td style="padding:10px; background:#f9f9f9; border-radius:6px;">${interest}</td>
+            </tr>
+            <tr>
+              <td style="padding:10px; font-weight:bold; color:#155DFC; vertical-align:top;">Message:</td>
+              <td style="padding:15px; background:#f9f9f9; border-radius:6px; white-space:pre-line;">
+                ${message}
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Footer -->
+        <div style="background:#f4f4f4; padding:15px; text-align:center; font-size:13px; color:#666;">
+          © ${new Date().getFullYear()} <b style="color:#155DFC;">NS Global Services</b> <br/>
+          This is an automated email. Please do not reply directly.
+        </div>
+      </div>
+    </div>
+  `,
+});
+
 
     return NextResponse.json({ success: true });
   } catch (error: any) {

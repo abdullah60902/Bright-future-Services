@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link"
-import { Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react"
+import { Mail } from "lucide-react"
 import logo from "@/public/logo1.jpg"
 import Image from "next/image"
 import { useState } from "react"
@@ -13,13 +13,6 @@ export default function Footer() {
     { href: "/courses", label: "Courses" },
     { href: "/pricing", label: "Pricing" },
     { href: "/contact", label: "Contact" },
-  ]
-
-  const socialLinks = [
-    { href: "#", icon: Facebook, label: "Facebook" },
-    { href: "#", icon: Twitter, label: "Twitter" },
-    { href: "#", icon: Instagram, label: "Instagram" },
-    { href: "#", icon: Linkedin, label: "LinkedIn" },
   ]
 
   const [email, setEmail] = useState("")
@@ -35,12 +28,11 @@ export default function Footer() {
 
   return (
     <footer className="bg-slate-900 text-white relative">
-      {/* Mount the Toaster so toast notifications appear */}
       <Toaster position="top-right" reverseOrder={false} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Brand + Subscribe */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <Link href="/" className="flex items-center space-x-2">
@@ -50,10 +42,9 @@ export default function Footer() {
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
               Expert-led online courses and professional services. Learn hands-on with mentors through live Zoom classes
-              starting from $2.
+              starting from $15.
             </p>
 
-            {/* Email Subscribe */}
             <div className="flex flex-col sm:flex-row gap-2 max-w-md">
               <input
                 type="email"
@@ -78,40 +69,32 @@ export default function Footer() {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-gray-300 hover:text-white transition-colors duration-200">
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-white transition-colors duration-200"
+                  >
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-
-          {/* Social Links */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-200"
-                  aria-label={social.label}
-                >
-                  <social.icon size={20} />
-                </a>
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-slate-800 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">© 2024 Digital Services. All rights reserved.</p>
+          <p className="text-gray-400 text-sm">© 2025 Bright future. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 sm:mt-0">
-            <Link href="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+            <Link
+              href="/privacy-policy"
+              className="text-gray-400 hover:text-white text-sm transition-colors duration-200"
+            >
               Privacy Policy
             </Link>
-            <Link href="/refund-policy" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+            <Link
+              href="/refund-policy"
+              className="text-gray-400 hover:text-white text-sm transition-colors duration-200"
+            >
               Refund Policy
             </Link>
           </div>

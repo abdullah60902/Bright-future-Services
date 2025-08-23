@@ -44,7 +44,7 @@ export default function RefundPolicyPage() {
                 <h2 className="text-2xl font-semibold text-slate-900 mb-4">How to Request a Refund</h2>
                 <p className="text-slate-700 leading-relaxed mb-4">
                   To request a refund, please email us at{" "}
-                  <a href="mailto:info.bright.future.ser@gmail.com" className="text-blue-600 hover:underline">
+                  <a href="mailto:info.mr6004276@gmail.com" className="text-blue-600 hover:underline">
                     info.bright.future.ser.com
                   </a>{" "}
                   with the following information:
@@ -104,12 +104,12 @@ export default function RefundPolicyPage() {
                 <div className="bg-slate-50 rounded-xl p-6 mt-4">
                   <p className="text-slate-700 mb-2">
                     <strong>Email:</strong>{" "}
-                    <a href="mailto:bright.future.ser@gmail.com" className="text-blue-600 hover:underline">
-                    bright.future.ser.com
+                    <a href="mailto:mr6004276@gmail.com" className="text-blue-600 hover:underline">
+                    mr6004276@gmail.com
                     </a>
                   </p>
                   <p className="text-slate-700 mb-2">
-                    <strong>Phone:</strong> +35794554049
+                    <strong>Phone:</strong> +35794575394
                   </p>
                   <p className="text-slate-700">
                     <strong>Business Hours:</strong> Monday-Friday, 9AM-6PM PST

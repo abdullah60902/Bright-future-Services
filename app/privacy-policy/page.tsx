@@ -99,7 +99,7 @@ export default function PrivacyPolicyPage() {
                 </ul>
                 <p className="text-slate-700 leading-relaxed mt-4">
                   To exercise these rights, contact us at{" "}
-                  <a href="mailto:info.bright.future.ser@gmail.com" className="text-blue-600 hover:underline">
+                  <a href="mailto:info.mr6004276@gmail.com" className="text-blue-600 hover:underline">
                     info.bright.future.ser.com
                   </a>
                 </p>
@@ -125,8 +125,8 @@ export default function PrivacyPolicyPage() {
                 <h2 className="text-2xl font-semibold text-slate-900 mb-4">Contact Us</h2>
                 <p className="text-slate-700 leading-relaxed">
                   If you have questions about this privacy policy or our data practices, please contact us at{" "}
-                  <a href="mailto:bright.future.ser@gmail.com" className="text-blue-600 hover:underline">
-                    bright.future.ser@gmail.com
+                  <a href="mailto:mr6004276@gmail.com" className="text-blue-600 hover:underline">
+                    mr6004276@gmail.com
                   </a>
                 </p>
               </section>

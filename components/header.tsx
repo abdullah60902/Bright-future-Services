@@ -4,9 +4,12 @@ import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
-import logo from "@/public/logo1.jpg" // Update with your actual logo path
+import logo from "@/public/logo1.jpg"
+import { usePathname } from "next/navigation"
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -22,7 +25,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Image src={logo} alt="Logo" width={62} height={62}  className="w-10 h-10"/>
+            <Image src={logo} alt="Logo" width={62} height={62} className="w-10 h-10" />
             <span className="font-bold text-xl text-slate-900">Bright future service</span>
           </Link>
 
@@ -32,7 +35,11 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-slate-700 hover:text-blue-600 font-medium transition-colors duration-200"
+                className={`font-medium transition-colors duration-200 relative pb-1 ${
+                  pathname === link.href
+                    ? "text-blue-600 after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-blue-600"
+                    : "text-slate-700 hover:text-blue-600"
+                }`}
               >
                 {link.label}
               </Link>
@@ -42,7 +49,7 @@ export default function Header() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link href="/pricing" className="btn-primary">
-              Enroll from $2
+              Enroll from $15
             </Link>
           </div>
 
@@ -63,7 +70,11 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-slate-700 hover:text-blue-600 font-medium transition-colors duration-200 px-2 py-1"
+                  className={`font-medium transition-colors duration-200 px-2 py-1 ${
+                    pathname === link.href
+                      ? "text-blue-600 underline"
+                      : "text-slate-700 hover:text-blue-600"
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
@@ -74,7 +85,7 @@ export default function Header() {
                 className="btn-primary inline-block text-center mt-4"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Enroll from $2
+                Enroll from $15
               </Link>
             </nav>
           </div>

@@ -155,7 +155,7 @@ export const featuredCourses = [
     title: "Digital Marketing 101",
     level: "Beginner",
     duration: "3 weeks",
-    price: 2,
+    price: 15,
     rating: 4.6,
     students: 3500,
     nextCohort: "2024-02-05",
@@ -224,6 +224,20 @@ export const allCourses = [
     instructor: "Maria Garcia",
     description: "Learn Python programming from scratch with hands-on projects and exercises",
   },
+  {
+    id: 9,
+    title: "1:1 Consultation",
+    level: "Custom",
+    duration: "Flexible",
+    price: consultationService.hourlyRate, // $20/hr
+    rating: 5.0,
+    students: 0,
+    nextCohort: "Flexible",
+    liveOnZoom: true,
+    category: "Consultation",
+    instructor: "Expert Mentor",
+    description: "Personalized mentorship and project guidance",
+  },
 ]
 
 export const testimonials = [
@@ -243,7 +257,7 @@ export const testimonials = [
     role: "Digital Marketer",
     company: "Growth Agency",
     content:
-      "Starting at just $2, I could test the waters. The quality exceeded my expectations and I upgraded to the full program.",
+      "Starting at just $15, I could test the waters. The quality exceeded my expectations and I upgraded to the full program.",
     avatar: "/placeholder.svg?height=60&width=60",
     rating: 5,
   },
@@ -272,7 +286,7 @@ export const pricingPlans = [
     id: 1,
     name: "Basic",
     description: "Perfect for getting started with your learning journey",
-    price: 2,
+    price: 15,
     icon: "BookOpen",
         courseId: 4, // 👈 Digital Marketing 101 ka id (allCourses se)
 
@@ -291,7 +305,7 @@ export const pricingPlans = [
     id: 2,
     name: "Standard",
     description: "Ideal for serious learners who want comprehensive training",
-    price: 15,
+    price: 30,
     icon: "Zap",
     popular: true,
         courseId: 3, // 👈 Digital Marketing 101 ka id (allCourses se)
@@ -329,3 +343,5 @@ export const pricingPlans = [
     buttonText: "Go Premium",
   },
 ]
+// lib/data.ts me ek new course add kar do
+

@@ -1,49 +1,50 @@
-import Header from "@/components/header"
-import Footer from "@/components/footer"
-import { CheckCircle, Calendar, Video, Mail, Download } from "lucide-react"
-import Link from "next/link"
-import Stripe from "stripe"
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import { CheckCircle, Calendar, Video, Mail, Download } from "lucide-react";
+import Link from "next/link";
+import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string)
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 
 function generateOrderId() {
-  const randomNum = Math.floor(100000 + Math.random() * 900000)
-  return `DS-${new Date().getFullYear()}-${randomNum}`
+  const randomNum = Math.floor(100000 + Math.random() * 900000);
+  return `DS-${new Date().getFullYear()}-${randomNum}`;
 }
 
-export default async function CheckoutSuccessPage({ searchParams }: { searchParams: { session_id?: string } }) {
-  if (!searchParams.session_id) {
-    return (
-      <div className="min-h-screen flex flex-col bg-slate-50">
-        <Header />
-        <main className="flex-1 flex items-center justify-center">
-          <p className="text-red-500">Invalid session</p>
-        </main>
-        <Footer />
-      </div>
-    )
+export default async function CheckoutSuccessPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ session_id?: string }>;
+}) {
+  const params = await searchParams;
+
+  if (!params.session_id) {
+    return <p>Invalid session</p>;
   }
 
-  // Stripe session fetch
-  const session = await stripe.checkout.sessions.retrieve(searchParams.session_id)
+  const session = await stripe.checkout.sessions.retrieve(params.session_id, {
+    expand: ["customer_details"],
+  });
 
-  // Email nikalna
-  let studentEmail = session.customer_email || null
-  if (!studentEmail && session.customer) {
-    const customer = await stripe.customers.retrieve(session.customer as string)
-    if (!("deleted" in customer)) {
-      studentEmail = customer.email || "No email provided"
-    }
-  }
+  console.log("Stripe session:", session);
 
+  
   const orderDetails = {
     orderId: generateOrderId(),
     courseName: session.metadata?.courseName || "Course",
-    studentEmail: studentEmail || "No email provided",
+    studentEmail: session.customer_details?.email || session.customer_email || "No email provided",
+
     amount: session.metadata?.amount || "0",
-    nextClassDate: "whitin week",
+    nextClassDate: "within a week",
     zoomLink: "https://zoom.us/j/1234567890",
-  }
+  };
+
+  // ✅ safe fetch
+  await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ""}/api/send-email`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(orderDetails),
+  });
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
@@ -55,7 +56,7 @@ export default async function CheckoutSuccessPage({ searchParams }: { searchPara
             <CheckCircle className="w-12 h-12 text-green-600" />
           </div>
 
-          <h1 className="text-4xl font-bold text-slate-900 mb-4">Welcome to Digital Services!</h1>
+          <h1 className="text-4xl font-bold text-slate-900 mb-4">Welcome to Bright future!</h1>
           <p className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto">
             Your enrollment is confirmed. Get ready to start your learning journey with expert instructors and live Zoom
             classes.

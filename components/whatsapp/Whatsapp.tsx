@@ -11,7 +11,7 @@ const Whatsapp: React.FC = () => {
     "Hello! I have questions regarding Bright Future ."
   );
   const [showEmojis, setShowEmojis] = useState<boolean>(false);
-  const phoneNumber: string = "+35794554049";
+  const phoneNumber: string = "+35794575394";
   const chatRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {

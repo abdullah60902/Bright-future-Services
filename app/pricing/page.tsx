@@ -75,13 +75,12 @@ export default function PricingPage() {
                     </ul>
 
                     {/* ✅ Checkout Link hata diya aur EnrollButton add kiya */}
-                   <EnrollButton
-  courseId={plan.courseId} // 👈 ab correct course match hoga
-  className="block w-full text-center text-lg py-4 mb-4 rounded-xl font-semibold transition-colors duration-200"
->
-  {plan.buttonText}
-</EnrollButton>
-
+                    <EnrollButton
+                      courseId={plan.id}
+                      className="block w-full text-center text-lg py-4 mb-4 rounded-xl font-semibold transition-colors duration-200"
+                    >
+                      {plan.buttonText}
+                    </EnrollButton>
                   </div>
                 )
               })}
@@ -122,9 +121,13 @@ export default function PricingPage() {
                     From ${consultationService.hourlyRate}/hour
                   </div>
                   <p className="text-slate-600 mb-6">Flexible scheduling • Expert mentors • Personalized guidance</p>
-                  <Link href="/contact" className="btn-primary inline-block">
-                    Book Consultation
-                  </Link>
+                <EnrollButton
+  courseId={9}
+  className="btn-primary inline-block"
+>
+  Book Consultation
+</EnrollButton>
+
                 </div>
 
                 <div>

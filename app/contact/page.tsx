@@ -192,15 +192,11 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold text-slate-900 mb-1">Office Location</h3>
 <p className="text-slate-600">
-  Krizi 11 Agioi Omologites
+ Address: 9, kalli Panagi 2013 Strovolos Lefkosia 
   <br />
-  ZIP Code: 1080
+  City: Nicosia 
   <br />
-  City: Nicosia
-  <br />
-  Region: Lefkosia
-  <br />
-  Country: Cyprus
+  County: Cyprus
 </p>
 
                     </div>
@@ -213,8 +209,8 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold text-slate-900 mb-1">Phone</h3>
 <p className="text-slate-600">
-  <a href="tel:+35794554049" className="hover:text-blue-600">
-    +357 94554049
+  <a href="tel:+35794575394" className="hover:text-blue-600">
+    +35794575394
   </a>
 </p>
                       <p className="text-sm text-slate-500">Mon-Fri, 9AM-6PM PST</p>
@@ -228,8 +224,8 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold text-slate-900 mb-1">Email</h3>
 <p className="text-slate-600">
-  <a href="mailto:bright.future.ser@gmail.com" className="hover:text-blue-600">
-    bright.future.ser@gmail.com
+  <a href="mailto:mr6004276@gmail.com" className="hover:text-blue-600">
+    mr6004276@gmail.com
   </a>
 </p>
                       <p className="text-sm text-slate-500">We'll respond within 24 hours</p>
@@ -238,7 +234,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Social Links */}
-                <div>
+                {/* <div>
                   <h3 className="font-semibold text-slate-900 mb-4">Follow Us</h3>
                   <div className="flex space-x-4">
                     {socialLinks.map((social) => (
@@ -252,14 +248,14 @@ export default function ContactPage() {
                       </a>
                     ))}
                   </div>
-                </div>
+                </div> */}
 
                {/* Map Section */}
 <div className="mt-8">
   <h3 className="font-semibold text-slate-900 mb-4">Find Us</h3>
   <div className="rounded-2xl overflow-hidden shadow-lg h-64 sm:h-80">
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m19!1m12!1m3!1d104374.59938279056!2d33.280225154518!3d35.16394654412647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m4!3e6!4m0!4m1!2sKrizi%2011%20Agioi%20Omologites%20ZIP%20Code%3A%201080%20City%3A%20Nicosia%20Region%3A%20Lefkosia%20Country%3A%20Cyprus!5e0!3m2!1sen!2s!4v1755792520951!5m2!1sen!2s"
+      src="https://www.google.com/maps/embed?pb=!1m19!1m12!1m3!1d418714.5346760159!2d32.87991270758721!3d34.926337567020674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m4!3e0!4m0!4m1!2sAddress%3A%209%2C%20kalli%20Panagi%202013%20Strovolos%20Lefkosia%20%20City%3A%20Nicosia%20%20County%3A%C2%A0Cyprus!5e0!3m2!1sen!2sus!4v1755863590266!5m2!1sen!2sus"
       width="100%"
       height="100%"
       style={{ border: 0 }}

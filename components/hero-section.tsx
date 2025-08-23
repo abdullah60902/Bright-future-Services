@@ -15,7 +15,7 @@ export default function HeroSection() {
               <span className="text-blue-600">Online Courses</span>
             </h1>
             <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-              Learn hands-on with mentors. Live Zoom classes start from $2. Build real projects and get support from
+              Learn hands-on with mentors. Live Zoom classes start from $15. Build real projects and get support from
               industry experts.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -29,16 +29,13 @@ export default function HeroSection() {
 
             {/* Stats */}
             <div className="flex flex-col sm:flex-row gap-8 mt-12 justify-center lg:justify-start">
-              <div className="text-center lg:text-left">
-                <div className="text-3xl font-bold text-slate-900">5,000+</div>
-                <div className="text-slate-600">Students Enrolled</div>
-              </div>
+              
               <div className="text-center lg:text-left">
                 <div className="text-3xl font-bold text-slate-900">4.8★</div>
                 <div className="text-slate-600">Average Rating</div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="text-3xl font-bold text-slate-900">From $2</div>
+                <div className="text-3xl font-bold text-slate-900">From $15</div>
                 <div className="text-slate-600">Course Pricing</div>
               </div>
             </div>

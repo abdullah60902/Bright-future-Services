@@ -3,6 +3,7 @@ import Footer from "@/components/footer"
 import { services, consultationService } from "@/lib/data"
 import { Code, Smartphone, Search, Palette, TrendingUp, Target, ArrowRight, Clock, CheckCircle } from "lucide-react"
 import Link from "next/link"
+import EnrollButton from "@/components/enroll-button"   // 👈 Missing import added
 
 const iconMap = {
   Code,
@@ -21,7 +22,7 @@ export default function ServicesPage() {
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-blue-50 to-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Professional Digital Services</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Professional Bright Future</h1>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
               From web development to digital marketing, we provide comprehensive solutions to help your business thrive
               in the digital world.
@@ -115,9 +116,12 @@ export default function ServicesPage() {
               </div>
 
               <div className="text-center">
-                <Link href="/contact" className="btn-primary text-lg px-8 py-4">
-                  Book a Consultation
-                </Link>
+                <EnrollButton
+                  courseId={9}   // 👈 courseId fix karo agar DB me alag hai
+                  className="btn-primary inline-block"
+                >
+                  Book Consultation
+                </EnrollButton>
               </div>
             </div>
           </div>
