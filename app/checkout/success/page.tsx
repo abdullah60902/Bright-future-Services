@@ -45,7 +45,7 @@ export default async function CheckoutSuccessPage({
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(orderDetails),
   });
-
+// nomana
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
       <Header />
