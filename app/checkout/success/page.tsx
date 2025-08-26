@@ -36,7 +36,7 @@ export default async function CheckoutSuccessPage({
 
     amount: session.metadata?.amount || "0",
     nextClassDate: "within a week",
-    zoomLink: "https://zoom.us/j/1234567890",
+    zoomLink: "https://us05web.zoom.us/j/8379581608?pwd=PL5sjLLg2XnE9h1iSCvYafdakaa2b1.1",
   };
 
   // ✅ safe fetch
